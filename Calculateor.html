@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    /* Simple box around the calculator */
+    .calculator {
+      border: 2px solid gray;
+      width: 180px;
+      padding: 10px;
+      background-color: lightgray;
+    }
+    input {
+      width: 160px;
+      height: 30px;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+    button {
+      width: 35px;
+      height: 35px;
+      margin: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="calculator">
+    <input type="text" id="result">
+    <br> 
+    <button onclick="display('7')">7</button> 
+    <button onclick="display('8')">8</button> 
+    <button onclick="display('9')">9</button> 
+    <button onclick="display('+')">+</button>
+    <br> 
+    <button onclick="display('4')">4</button> 
+    <button onclick="display('5')">5</button> 
+    <button onclick="display('6')">6</button> 
+    <button onclick="display('-')">-</button>
+    <br> 
+    <button onclick="display('1')">1</button> 
+    <button onclick="display('2')">2</button> 
+    <button onclick="display('3')">3</button> 
+    <button onclick="display('*')">x</button>
+    <br> 
+    <button onclick="clearS()">C</button> 
+    <button onclick="display('0')">0</button> 
+    <button onclick="calculator()">=</button> 
+    <button onclick="display('/')">/</button> 
+  </div>
+
+  <script>
+    function display(value) {
+      document.getElementById("result").value += value;
+    }
+
+    function clearS() {
+      document.getElementById("result").value = "";
+    }
+
+    function calculator() {
+      var result = document.getElementById("result").value;
+      var output = eval(result);
+      document.getElementById("result").value = output;
+    }
+  </script>
+</body>
+</html>
